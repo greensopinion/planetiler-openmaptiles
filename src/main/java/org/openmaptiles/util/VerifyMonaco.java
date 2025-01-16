@@ -23,7 +23,7 @@ public class VerifyMonaco {
    */
   public static Verify verify(Mbtiles mbtiles) {
     Verify verify = Verify.verify(mbtiles);
-    verify.checkMinFeatureCount(MONACO_BOUNDS, "building", Map.of(), 13, 14, 100, Polygon.class);
+    verify.checkMinFeatureCount(MONACO_BOUNDS, "building", Map.of(), 14, 14, 100, Polygon.class);
     verify.checkMinFeatureCount(MONACO_BOUNDS, "transportation", Map.of(), 10, 14, 5, LineString.class);
     verify.checkMinFeatureCount(MONACO_BOUNDS, "landcover", Map.of(
       "class", "grass",

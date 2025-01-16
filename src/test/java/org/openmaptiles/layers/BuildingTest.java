@@ -18,25 +18,25 @@ class BuildingTest extends AbstractLayerTest {
 
   @Test
   void testBuilding() {
-    assertFeatures(13, List.of(Map.of(
+    assertFeatures(14, List.of(Map.of(
       "colour", "<null>",
       "hide_3d", "<null>",
       "_layer", "building",
       "_type", "polygon",
-      "_minzoom", 13,
+      "_minzoom", 14,
       "_maxzoom", 14,
       "_buffer", 4d,
-      "_minpixelsize", 0.1d
+      "_minpixelsize", 0.0625d
     )), process(polygonFeature(Map.of(
       "building", "yes"
     ))));
-    assertFeatures(13, List.of(Map.of(
+    assertFeatures(14, List.of(Map.of(
       "_layer", "building",
       "_type", "polygon"
     )), process(polygonFeature(Map.of(
       "building:part", "yes"
     ))));
-    assertFeatures(13, List.of(), process(polygonFeature(Map.of(
+    assertFeatures(14, List.of(), process(polygonFeature(Map.of(
       "building", "no"
     ))));
   }

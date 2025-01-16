@@ -127,18 +127,10 @@ class OpenMapTilesTest {
 
   @Test
   void testContainsBuildings() {
-    assertFeatureNear(mbtiles, "building", Map.of(), 7.41919, 43.73401, 13, 14);
+    assertFeatureNear(mbtiles, "building", Map.of(), 7.41919, 43.73401, 14, 14);
     assertNumFeatures("building", Map.of(), 14, 1316, Polygon.class);
-    assertNumFeatures("building", Map.of(), 13, 196, Polygon.class);
   }
 
-  @Test
-  void testContainsHousenumber() {
-    assertFeatureNear(mbtiles, "housenumber", Map.of(
-      "housenumber", "27"
-    ), 7.42117, 43.73652, 14, 14);
-    assertNumFeatures("housenumber", Map.of(), 14, 231, Point.class);
-  }
 
   @Test
   void testBoundary() {

@@ -20,4 +20,4 @@ target/
 .settings
 bin/
 
-data/
+/data
