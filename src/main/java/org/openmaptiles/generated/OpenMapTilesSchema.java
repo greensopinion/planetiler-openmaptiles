@@ -81,7 +81,7 @@ public class OpenMapTilesSchema {
       new org.openmaptiles.layers.WaterName(translations, config, stats),
       new org.openmaptiles.layers.TransportationName(translations, config, stats),
       new org.openmaptiles.layers.Place(translations, config, stats),
-      new org.openmaptiles.layers.Housenumber(translations, config, stats),
+//      new org.openmaptiles.layers.Housenumber(translations, config, stats),
       new org.openmaptiles.layers.Poi(translations, config, stats),
       new org.openmaptiles.layers.AerodromeLabel(translations, config, stats)
     );

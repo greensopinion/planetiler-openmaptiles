@@ -91,27 +91,28 @@ public class Poi implements
   private static final Logger LOGGER = LoggerFactory.getLogger(Poi.class);
   private static final Map<String, Integer> CLASS_RANKS = Map.ofEntries(
     entry(FieldValues.CLASS_HOSPITAL, 20),
-    entry(FieldValues.CLASS_RAILWAY, 40),
-    entry(FieldValues.CLASS_BUS, 50),
-    entry(FieldValues.CLASS_ATTRACTION, 70),
+//    entry(FieldValues.CLASS_RAILWAY, 40),
+//    entry(FieldValues.CLASS_BUS, 50),
+//    entry(FieldValues.CLASS_ATTRACTION, 70),
     entry(FieldValues.CLASS_HARBOR, 75),
-    entry(FieldValues.CLASS_COLLEGE, 80),
-    entry(FieldValues.CLASS_SCHOOL, 85),
+//    entry(FieldValues.CLASS_COLLEGE, 80),
+//    entry(FieldValues.CLASS_SCHOOL, 85),
+    entry(FieldValues.CLASS_CASTLE, 86),
     entry(FieldValues.CLASS_STADIUM, 90),
-    entry("zoo", 95),
-    entry(FieldValues.CLASS_TOWN_HALL, 100),
+//    entry("zoo", 95),
+//    entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
     entry(FieldValues.CLASS_CEMETERY, 115),
-    entry(FieldValues.CLASS_PARK, 120),
-    entry(FieldValues.CLASS_LIBRARY, 130),
-    entry("police", 135),
-    entry(FieldValues.CLASS_POST, 140),
-    entry(FieldValues.CLASS_GOLF, 150),
-    entry(FieldValues.CLASS_SHOP, 400),
-    entry(FieldValues.CLASS_GROCERY, 500),
-    entry(FieldValues.CLASS_FAST_FOOD, 600),
-    entry(FieldValues.CLASS_CLOTHING_STORE, 700),
-    entry(FieldValues.CLASS_BAR, 800)
+    entry(FieldValues.CLASS_PARK, 120)
+//    entry(FieldValues.CLASS_LIBRARY, 130),
+//    entry("police", 135),
+//    entry(FieldValues.CLASS_POST, 140),
+//    entry(FieldValues.CLASS_GOLF, 150),
+//    entry(FieldValues.CLASS_SHOP, 400),
+//    entry(FieldValues.CLASS_GROCERY, 500),
+//    entry(FieldValues.CLASS_FAST_FOOD, 600),
+//    entry(FieldValues.CLASS_CLOTHING_STORE, 700),
+//    entry(FieldValues.CLASS_BAR, 800)
   );
   private static final Set<String> UNIVERSITY_POI_SUBCLASSES = Set.of("university", "college");
   private static final List<String> AGG_STOP_SUBCLASS_ORDER = List.of(
