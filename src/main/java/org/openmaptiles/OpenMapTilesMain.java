@@ -4,6 +4,7 @@ import com.onthegomap.planetiler.Planetiler;
 import com.onthegomap.planetiler.config.Arguments;
 import java.nio.file.Path;
 import org.openmaptiles.generated.OpenMapTilesSchema;
+import org.openmaptiles.util.StyleAttributeFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,6 +57,9 @@ public class OpenMapTilesMain {
       // override with --mbtiles=... argument or MBTILES=... env var or mbtiles=... in a config file
       .setOutput("mbtiles", dataDir.resolve("output.mbtiles"))
       .run();
+
+    // Log filtered attributes summary
+    StyleAttributeFilter.logFilteredAttributes();
 
     LOGGER.info("""
       Acknowledgments

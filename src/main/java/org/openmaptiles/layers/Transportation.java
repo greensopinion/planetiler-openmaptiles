@@ -512,6 +512,15 @@ public class Transportation implements
 
       FeatureCollector.Feature feature = features.line(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
         // main attributes at all zoom levels (used for grouping <= z8)
+        .setPixelToleranceOverrides(zoom -> switch (zoom) {
+          case 0,1,2,3 -> 10.0;
+          case 4,5 -> 5.0;
+          case 6,7 -> 2.0;
+          case 8,9 -> 1.0;
+          case 10,11 -> 0.5;
+          case 12,13 -> 0.2;
+          default -> 0.1;
+        })
         .setAttr(Fields.CLASS, highwayClass)
         .setAttr(Fields.SUBCLASS, highwaySubclass(highwayClass, element.publicTransport(), highway))
         .setAttr(Fields.NETWORK, networkType != null ? networkType.name : null)

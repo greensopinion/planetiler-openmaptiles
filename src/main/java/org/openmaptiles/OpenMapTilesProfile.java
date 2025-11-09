@@ -24,6 +24,7 @@ import org.openmaptiles.generated.OpenMapTilesSchema;
 import org.openmaptiles.generated.Tables;
 import org.openmaptiles.layers.Transportation;
 import org.openmaptiles.layers.TransportationName;
+import org.openmaptiles.util.UniversalAttributeFilter;
 
 /**
  * Delegates the logic for generating a map to individual implementations in the {@code layers} package.
@@ -73,7 +74,12 @@ public class OpenMapTilesProfile extends ForwardingProfile {
     for (Layer layer : allLayers) {
       if (caresAboutLayer(layer)) {
         layers.add(layer);
-        registerHandler(layer);
+        // Wrap layer with attribute filter if it's a post-processor
+        if (layer instanceof ForwardingProfile.LayerPostProcessor) {
+          registerHandler((Handler) UniversalAttributeFilter.wrap(layer.name(), layer));
+        } else {
+          registerHandler(layer);
+        }
         if (layer instanceof TransportationName transportationName) {
           transportationNameLayer = transportationName;
         }
@@ -88,7 +94,12 @@ public class OpenMapTilesProfile extends ForwardingProfile {
       transportationNameLayer.needsTransportationLayer(transportationLayer);
       if (!layers.contains(transportationLayer)) {
         layers.add(transportationLayer);
-        registerHandler(transportationLayer);
+        // Wrap with attribute filter if it's a post-processor
+        if (transportationLayer instanceof ForwardingProfile.LayerPostProcessor) {
+          registerHandler((Handler) UniversalAttributeFilter.wrap(transportationLayer.name(), transportationLayer));
+        } else {
+          registerHandler(transportationLayer);
+        }
       }
     }
 
